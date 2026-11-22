@@ -47,6 +47,22 @@ On the Windows computer where VS Code runs, install:
 - [SSHFS-Win](https://github.com/winfsp/sshfs-win)
 - Windows OpenSSH Client
 
+### Install SSHFS-Win with Winget
+
+Run PowerShell **as Administrator**, then install SSHFS-Win from the Windows Package Manager repository:
+
+```powershell
+winget install --id SSHFS-Win.SSHFS-Win --exact
+```
+
+Winget reports when the package is already installed and upgrades it when a newer version is available. Verify the installed package and version with:
+
+```powershell
+winget list --id SSHFS-Win.SSHFS-Win --exact
+```
+
+The installation used for this guide was verified as SSHFS-Win `3.5.20357` (x64). Because SSHFS-Win requires WinFsp, make sure WinFsp is installed before mounting a remote directory. If it is missing, install it from the [official WinFsp downloads](https://winfsp.dev/rel/).
+
 ### 1. Add a generic mounting function to PowerShell
 
 Open your PowerShell profile:
